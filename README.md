@@ -115,7 +115,7 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
 
-# Setting up cycler_sprite convertion in Trenchbroom: 
+# cycler_sprite conversion: 
 
 1) Goto `Run->Compile Map...`
 
@@ -130,4 +130,6 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 4) Config the new task:
    - `Tool Path: python3`
    - `Parameters: Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}-compile.map`
+
+![image](https://github.com/G2Pavon/TAB/assets/14117486/e5403a38-f71a-4d5f-a369-c2cedb247b78)
 
