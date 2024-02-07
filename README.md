@@ -66,14 +66,14 @@ Now follow the next steps:
 
 # Generate FGD:
 
-open terminal/cmd in `Mapping/tools/TAB`
+1) open terminal/cmd in `Mapping/tools/TAB`
 
 Example in linux:
 ```
 cd `Mapping/tools/TAB`
 ```
 
-Run `mdl2fgd.py`:
+2) Run `mdl2fgd.py`:
 ```
 python3 mdl2fgd.py /home/user/steam/steam/steamapps/common/Half-Life/cstrike/models
 ```
@@ -82,20 +82,20 @@ Output:
 Mapping/tools/TAB/models.fgd
 ```
 
-# Setting up in Trenchbroom: 
+# Setting up FGD in Trenchbroom: 
 
-Navigate to the folder where the game configuration (e.g: `Trenchbroom/games/Halflife`) files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux).
+1) Navigate to the folder where the game configuration (e.g: `Trenchbroom/games/Halflife`) files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux).
 
-Paste `models.fgd` into `games/Halflife`
+2) Paste `models.fgd` into `games/Halflife`
 
-Incude models.fgd with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
+3) Incude models.fgd with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
 ```
 @include "zhlt.fgd"
 @include "HalfLife.fgd"
 @include "models.fgd"
 ```
 
-Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.fgd" ]` by ` "definitions": [ "combined.fgd" ]`. Make sure you have `"setDefaultProperties": true`:
+4) Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.fgd" ]` by ` "definitions": [ "combined.fgd" ]`. Make sure you have `"setDefaultProperties": true`:
 ```
     "entities": {
         "definitions": [ "combine.fgd" ],
@@ -105,9 +105,23 @@ Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.
 ```
 
 ---
-Now you have all models from your game models/ folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196)
+Now you have all models from your game models/ folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196) to group prop_ entities) 
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
 
+# Setting up cycler_sprite convertion in Trenchbroom: 
 
+1) Goto `Run->Compile Map...`
+
+2) Select your profile
+
+![image](https://github.com/G2Pavon/TAB/assets/14117486/0ec37f66-6c5a-4068-b79e-2e8bf597159c)
+
+
+3) Add new `Run Tool` Task after `Export Map` task and before `hlcsg` task
+![image](https://github.com/G2Pavon/TAB/assets/14117486/febfbb4b-4a0c-4fd7-ab1e-7b8493d5c4d8)
+
+4) Config the new task:
+   - `Tool Path: python3`
+   - `Parameters: Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}-compile.map`
 
