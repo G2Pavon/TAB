@@ -127,7 +127,8 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 
 
 3) Add new `Run Tool` Task after `Export Map` task and before `hlcsg` task
-![image](https://github.com/G2Pavon/TAB/assets/14117486/febfbb4b-4a0c-4fd7-ab1e-7b8493d5c4d8)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/8af59b0f-db21-4a21-95dc-ca7864d0b4cf)
+
 
 4) Config the new task:
     >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
