@@ -132,5 +132,10 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
    - `Tool Path: python3`
    - `Parameters: Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
+
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/e5403a38-f71a-4d5f-a369-c2cedb247b78)
+
+
+![image](https://github.com/G2Pavon/TAB/assets/14117486/ac50d579-7525-4190-934b-daf38c35bca1)
+
 
