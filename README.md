@@ -1,4 +1,6 @@
-# TAB
+#### Trenchbroom Entity Browser like an Assets Browser
+
+Avoid having to create cycler_sprite and manually configure the model path!
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/702c8466-c3f2-493f-ab8f-a117a3f55991)
 
