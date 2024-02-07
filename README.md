@@ -24,7 +24,7 @@ Avoid having to create cycler_sprite and manually configure the model path!! (pl
 // ... Rest of models
 ```
 ---
-`gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite`
+`gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite` (compiling task)
 
 ```
 {
