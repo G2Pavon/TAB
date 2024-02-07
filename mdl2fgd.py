@@ -130,7 +130,7 @@ def generate_and_write_fgd(mdl_files, output_file_path):
             classname = f"{ENTITY_PREFIX}_{model_name}" 
 
         content += "@PointClass "
-        content += f"base({BASE}) size({ENTITY_POINT_SIZE}) color({ENTITY_POINT_COLOR})"
+        content += f"base({BASE}) size({ENTITY_POINT_SIZE}) color({ENTITY_POINT_COLOR}) "
         content += f'model({{ "path": "models/{mdl_path}" }}) = {classname} : "Model" \n[ model(string): "Path" : "models/{mdl_path}"]\n\n'
 
     with open(output_file_path, "w") as file:
