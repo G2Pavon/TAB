@@ -9,7 +9,7 @@ Avoid having to create cycler_sprite and manually configure the model path!! (pl
 ---
 # How works:
 
-`mdl2fgd.py` reads the specified directory for .mdl files (e.g: `/home/user/steam/steam/steamapps/common/Half-Life/strike/models/` ). Then generate a `.fgd` with the following format:
+`mdl2fgd.py` reads the specified directory for .mdl files (e.g: `/home/user/steam/steam/steamapps/common/Half-Life/strike/models/` ). Then a `.fgd` is generated with the following format:
 
 ```
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ConvertToCycler ...
@@ -24,7 +24,7 @@ Avoid having to create cycler_sprite and manually configure the model path!! (pl
 // ... Rest of models
 ```
 ---
-`gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite` (compiling task)
+`gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite` (during the compiling task)
 
 ```
 {
