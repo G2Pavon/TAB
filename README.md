@@ -105,7 +105,9 @@ Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.
 ```
 
 ---
-Now you have all models from your game models/ folder into Entity Browser:
+Now you have all models from your game models/ folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196)
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
+
+
 
