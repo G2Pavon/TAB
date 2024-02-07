@@ -128,7 +128,7 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/febfbb4b-4a0c-4fd7-ab1e-7b8493d5c4d8)
 
 4) Config the new task:
-    <WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file you are editing is located in ${WORK_DIR_PATH}>
+    >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
    - `Tool Path: python3`
    - `Parameters: Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
