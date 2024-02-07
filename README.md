@@ -1,7 +1,5 @@
 # TAB
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
-
 ---
 # How works:
 
@@ -50,4 +48,64 @@ To:
 "origin" "-192 -128 96"
 }
 ```
+---
+
+# How to use
+
+Download the current repo and goldsrcmap repo (https://github.com/G2Pavon/goldsrcmap)
+Extract the files in your working directory:
+```
+Mapping/tools/TAB/utils
+Mapping/tools/TAB/format
+Mapping/tools/TAB/__init__.py
+Mapping/tools/TAB/goldsrcmap.py
+Mapping/tools/TAB/mdl2fgd.py
+Mapping/tools/TAB/gen_cycler_sprite.py
+```
+Now follow the next steps:
+
+# Generate FGD:
+
+open terminal/cmd in `Mapping/tools/TAB`
+
+Example in linux:
+```
+cd `Mapping/tools/TAB`
+```
+
+Run `mdl2fgd.py`:
+```
+python3 mdl2fgd.py /home/user/steam/steam/steamapps/common/Half-Life/cstrike/models
+```
+Output:
+```
+Mapping/tools/TAB/models.fgd
+```
+
+# Setting up in Trenchbroom: 
+
+Navigate to the folder where the game configuration (e.g: `Trenchbroom/games/Halflife`) files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux).
+
+Paste `models.fgd` into `games/Halflife`
+
+Incude models.fgd with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
+```
+@include "zhlt.fgd"
+@include "HalfLife.fgd"
+@include "models.fgd"
+```
+
+Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.fgd" ]` by ` "definitions": [ "combined.fgd" ]`. Make sure you have `"setDefaultProperties": true`:
+```
+    "entities": {
+        "definitions": [ "combine.fgd" ],
+        "defaultcolor": "0.6 0.6 0.6 1.0",
+        "setDefaultProperties": true
+    },
+```
+
+---
+Now you have all models from your game models/ folder into Entity Browser:
+
+![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
 
