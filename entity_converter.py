@@ -6,8 +6,8 @@ import goldsrcmap as gsm
 
 def main(map_file):
     print("-----------------------------------------------")
-    print("Converting 'prop_' entity to 'cycler_sprite' ...")
-    print("Converting 'spr_' entity to 'env_sprite' ...")
+    print("Convert 'prop_' entity to 'cycler_sprite' ...")
+    print("And 'spr_' entity to 'env_sprite' ...")
     m = gsm.load_map(map_file)
     cycler_list = []
     env_list = []
@@ -41,12 +41,12 @@ def main(map_file):
     file_name, _ = os.path.splitext(os.path.basename(map_file))
     
     output_file = f"{file_name}.map"
-    print(" cycler_sprite conversion completed !!! ")
+    print(" cycler_sprite/env_sprite conversion completed !!! ")
     gsm.save_map(m, output_file)
     print(f"Modified: '{output_file}' \n ---------------------------------------")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert entities with 'to_cycler' attribute to cycler_sprite")
+    parser = argparse.ArgumentParser(description="Convert entities with 'to_cycler' and 'to_env_sprite' attributes to cycler_sprite and env_sprite")
     parser.add_argument("map_file", help="Path to the input .map file")
     args = parser.parse_args()
     main(args.map_file)
