@@ -91,7 +91,7 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 
 ---
 
-# cycler_sprite conversion: 
+# cycler_sprite conversion (for Counter-Strike): 
 
 1) Goto `Run->Compile Map...`
 
