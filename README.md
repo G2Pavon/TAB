@@ -22,7 +22,17 @@ Avoid creating cycler_sprite or env_sprites and manually setting the model/sprit
 @PointClass base(Targetname, Angles, FrameRate, RenderFields, ConvertToCycler) size(-8 -8 -8, 8 8 8) color(204 0 255) model({ "path": "models/sub_folder/box.mdl" }) = prop_box : "Model" 
 [ model(string): "Path" : "models/sub_folder/box.mdl"]
 
-// ... Rest of models
+// Rest of models...
+```
+
+```
+// ... Base class: Targetname, Angles, FrameRate, RenderFields, ToggleSprite, ConvertToEnvSprite ...
+
+// Sprites
+@PointClass base(Targetname, Angles, FrameRate, RenderFields, ToggleSprite, ConvertToEnvSprite) size(-8 -8 -8, 8 8 8) color(204 0 255) iconsprite("sprites/ikgrass3.spr") = spr_ikgrass3 : "Sprite" 
+[ model(string): "Path" : "models/ikgrass3.spr"]
+
+// Resot of sprites...
 ```
 
 ---
