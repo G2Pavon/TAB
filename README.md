@@ -66,6 +66,7 @@ python3 fgd_generator.py /home/user/steam/steamapps/common/Half-Life/cstrike
 Output:
 
 >Mapping/tools/TAB/models.fgd
+>
 >Mapping/tools/TAB/sprites.fgd
 
 # Setting up FGD in Trenchbroom: 
@@ -114,10 +115,7 @@ Now you have all models and sprites from your game folder into Entity Browser (R
 4) Config the new task:
     >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
    - Tool Path: `python3`
-   - Parameters: `Mapping/tools/TAB/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
+   - Parameters: `path/to/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/eb541acf-6cd2-4012-928c-04ab2a9ace41)
-
-
-
+![image](https://github.com/G2Pavon/TAB/assets/14117486/2616cc5d-058b-482e-a0df-645b45c0c2bf)
