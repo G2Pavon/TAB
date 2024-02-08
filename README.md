@@ -1,6 +1,6 @@
 #### TrenchBroom Entity Browser like an Assets Browser
 
-Avoid creating cycler_sprite or env_sprites and manually setting the model/sprite path. Plus: you have a quick model/sprite preview before placing the entity without using external viewers.
+Avoid creating cycler_sprite and env_sprites entities and manually setting the model/sprite path. Plus: you have a quick model/sprite preview before placing the entity without using external viewers.
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/702c8466-c3f2-493f-ab8f-a117a3f55991)
 
