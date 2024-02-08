@@ -117,6 +117,7 @@ Now you have all models and sprites from your game folder into Entity Browser (R
    - Parameters: `Mapping/tools/TAB/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/ac50d579-7525-4190-934b-daf38c35bca1)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/eb541acf-6cd2-4012-928c-04ab2a9ace41)
+
 
 
