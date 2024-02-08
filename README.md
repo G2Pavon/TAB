@@ -1,4 +1,4 @@
-#### Trenchbroom Entity Browser like an Assets Browser
+#### TrenchBroom Entity Browser like an Assets Browser
 
 Avoid creating cycler_sprite or env_sprites and manually setting the model/sprite path. Plus: you have a quick model/sprite preview before placing the entity without using external viewers.
 
