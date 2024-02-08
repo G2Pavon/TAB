@@ -1,15 +1,16 @@
 #### Trenchbroom Entity Browser like an Assets Browser
 
-Avoid creating cycler_sprite and manually setting the model path. Plus: you have a quick model preview before placing the entity without using external mdl viewers. (TODO: sprites)
+Avoid creating cycler_sprite or env_sprites and manually setting the model/sprite path. Plus: you have a quick model/sprite preview before placing the entity without using external viewers.
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/702c8466-c3f2-493f-ab8f-a117a3f55991)
 
+![image](https://github.com/G2Pavon/TAB/assets/14117486/650067be-5852-4981-8626-2827e6cd2838)
 
 
 ---
 # How works:
 
-`mdl2fgd.py` reads the specified directory for .mdl files (e.g: `/home/user/steam/steamapps/common/Half-Life/strike/models/` ). Then a `.fgd` is generated with the following format:
+`fgd_generator.py` reads the game path (e.g: `/home/user/steam/steamapps/common/Half-Life/cstrike/` ). Then `models.fgd` and `sprites.fgd` are generated.
 
 ```
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ConvertToCycler ...
@@ -23,8 +24,9 @@ Avoid creating cycler_sprite and manually setting the model path. Plus: you have
 
 // ... Rest of models
 ```
+
 ---
-`gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite` (during the compiling task)
+`entity_converter.py` read the `.map` file and covert the `prop_*` entities into `cycler_sprite` and the `spr_*` entities into `env_sprite` (during the compiling task)
 
 | Before | After|
 |--------|------|
@@ -40,8 +42,8 @@ Mapping/tools/TAB/utils
 Mapping/tools/TAB/format
 Mapping/tools/TAB/__init__.py
 Mapping/tools/TAB/goldsrcmap.py
-Mapping/tools/TAB/mdl2fgd.py
-Mapping/tools/TAB/gen_cycler_sprite.py
+Mapping/tools/TAB/fgd_generator.py
+Mapping/tools/TAB/entity_converter.py
 ```
 Now follow the next steps:
 
@@ -54,25 +56,30 @@ Example in linux:
 cd Mapping/tools/TAB
 ```
 
-2) Run `mdl2fgd.py <path to models folder>`:
+2) Run `fgd_generator.py <path to game folder>`:
 ```
-python3 mdl2fgd.py /home/user/steam/steamapps/common/Half-Life/cstrike/models
+python3 fgd_generator.py /home/user/steam/steamapps/common/Half-Life/cstrike
 ```
+![image](https://github.com/G2Pavon/TAB/assets/14117486/13953d8b-3581-49b4-8b00-97c146dc931f)
+
+
 Output:
 
 >Mapping/tools/TAB/models.fgd
+>Mapping/tools/TAB/sprites.fgd
 
 # Setting up FGD in Trenchbroom: 
 
-1) Navigate to the folder where the game configuration files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux. `Trenchbroom/games/Halflife`).
+1) Navigate to the folder where the game configuration files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux.
 
-2) Paste `models.fgd` into `games/Halflife`
+2) Paste `models.fgd` and `sprites.fgd` into `games/Halflife`
 
-3) Incude models.fgd with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
+3) Incude new fgds with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
 ```
 @include "zhlt.fgd"
 @include "HalfLife.fgd"
 @include "models.fgd"
+@include "sprites.fgd"
 ```
 
 4) Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.fgd" ]` by ` "definitions": [ "combined.fgd" ]`. Make sure you have `"setDefaultProperties": true`:
@@ -85,7 +92,7 @@ Output:
 ```
 
 ---
-Now you have all models from your game models/ folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196) to group prop_ entities) 
+Now you have all models and sprites from your game folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196) to group entities by name) 
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
 
@@ -107,7 +114,7 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 4) Config the new task:
     >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
    - Tool Path: `python3`
-   - Parameters: `Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
+   - Parameters: `Mapping/tools/TAB/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/ac50d579-7525-4190-934b-daf38c35bca1)
