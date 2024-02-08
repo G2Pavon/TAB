@@ -9,7 +9,7 @@ Avoid having to create cycler_sprite and manually configure the model path. Plus
 ---
 # How works:
 
-`mdl2fgd.py` reads the specified directory for .mdl files (e.g: `/home/user/steam/steam/steamapps/common/Half-Life/strike/models/` ). Then a `.fgd` is generated with the following format:
+`mdl2fgd.py` reads the specified directory for .mdl files (e.g: `/home/user/steam/steamapps/common/Half-Life/strike/models/` ). Then a `.fgd` is generated with the following format:
 
 ```
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ConvertToCycler ...
@@ -18,7 +18,7 @@ Avoid having to create cycler_sprite and manually configure the model path. Plus
 @PointClass base(Targetname, Angles, FrameRate, RenderFields, ConvertToCycler) size(-8 -8 -8, 8 8 8) color(204 0 255) model({ "path": "models/example.mdl" }) = prop_example : "Model" 
 [ model(string): "Path" : "models/example.mdl"]
 
-@PointClass base(Targetname, Angles, FrameRate, RenderFields, ConvertToCycler) size(-8 -8 -8, 8 8 8) color(204 0 255) model({ "path": "models/sub_folder/box.mdl" }) = prop_example : "Model" 
+@PointClass base(Targetname, Angles, FrameRate, RenderFields, ConvertToCycler) size(-8 -8 -8, 8 8 8) color(204 0 255) model({ "path": "models/sub_folder/box.mdl" }) = prop_box : "Model" 
 [ model(string): "Path" : "models/sub_folder/box.mdl"]
 
 // ... Rest of models
@@ -26,34 +26,9 @@ Avoid having to create cycler_sprite and manually configure the model path. Plus
 ---
 `gen_cycler_sprite.py` read the `.map` file and covert the `prop_` entities into `cycler_sprite` (during the compiling task)
 
-```
-{
-"classname" "prop_box"
-"model" "models/sub_folder/box.mdl"
-"angles" "0 0 0"
-"framerate" "10"
-"rendermode" "0"
-"rendercolor" "0 0 0"
-"renderfx" "0"
-"to_cycler" "1"
-"origin" "-192 -128 96"
-}
-```
-
-To:
-
-```
-{
-"classname" "cycler_sprite"
-"model" "models/sub_folder/prop.mdl"
-"angles" "0 0 0"
-"framerate" "10"
-"rendermode" "0"
-"rendercolor" "0 0 0"
-"renderfx" "0"
-"origin" "-192 -128 96"
-}
-```
+| Before | After|
+|--------|------|
+| ![image](https://github.com/G2Pavon/TAB/assets/14117486/01ee2b8d-edcc-4495-98c7-7e5c9034250b)| ![image](https://github.com/G2Pavon/TAB/assets/14117486/f270773f-f29a-4792-a487-570dd62f5467) |
 ---
 
 # How to use
@@ -72,25 +47,24 @@ Now follow the next steps:
 
 # Generate FGD:
 
-1) open terminal/cmd in `Mapping/tools/TAB`
+1) Open terminal/cmd in `Mapping/tools/TAB`
 
 Example in linux:
 ```
-cd `Mapping/tools/TAB`
+cd Mapping/tools/TAB
 ```
 
-2) Run `mdl2fgd.py`:
+2) Run `mdl2fgd.py <path to models folder>`:
 ```
-python3 mdl2fgd.py /home/user/steam/steam/steamapps/common/Half-Life/cstrike/models
+python3 mdl2fgd.py /home/user/steam/steamapps/common/Half-Life/cstrike/models
 ```
 Output:
-```
-Mapping/tools/TAB/models.fgd
-```
+
+>Mapping/tools/TAB/models.fgd
 
 # Setting up FGD in Trenchbroom: 
 
-1) Navigate to the folder where the game configuration (e.g: `Trenchbroom/games/Halflife`) files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux).
+1) Navigate to the folder where the game configuration files are located (where TrenchBroom.exe is located, or `user/share/trenchbroom` in linux. `Trenchbroom/games/Halflife`).
 
 2) Paste `models.fgd` into `games/Halflife`
 
@@ -132,8 +106,8 @@ Now you have all models from your game models/ folder into Entity Browser (Recom
 
 4) Config the new task:
     >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
-   - `Tool Path: python3`
-   - `Parameters: Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
+   - Tool Path: `python3`
+   - Parameters: `Mapping/tools/TAB/gen_cycler_sprite.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/ac50d579-7525-4190-934b-daf38c35bca1)
