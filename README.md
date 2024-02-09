@@ -12,7 +12,7 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 
 `fgd_generator.py` reads the game path (e.g: `/home/user/steam/steamapps/common/Half-Life/cstrike/` ). Then `models.fgd` and `sprites.fgd` are generated.
 
-```
+```C
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ConvertToCycler ...
 
 // Models
@@ -25,7 +25,7 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 // Rest of models...
 ```
 
-```
+```C
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ToggleSprite, ConvertToEnvSprite ...
 
 // Sprites
@@ -47,13 +47,14 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 
 Download the current repo and goldsrcmap repo (https://github.com/G2Pavon/goldsrcmap)
 Extract the files in your working directory:
-```
+```C
 Mapping/tools/TAB/utils
 Mapping/tools/TAB/format
 Mapping/tools/TAB/__init__.py
 Mapping/tools/TAB/goldsrcmap.py
 Mapping/tools/TAB/fgd_generator.py
 Mapping/tools/TAB/entity_converter.py
+Mapping/tools/TAB/base.py
 ```
 Now follow the next steps:
 
@@ -62,12 +63,12 @@ Now follow the next steps:
 1) Open terminal/cmd in `Mapping/tools/TAB`
 
 Example in linux:
-```
+```Shell
 cd Mapping/tools/TAB
 ```
 
 2) Run `fgd_generator.py <path to game folder>`:
-```
+```Shell
 python3 fgd_generator.py /home/user/steam/steamapps/common/Half-Life/cstrike
 ```
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/13953d8b-3581-49b4-8b00-97c146dc931f)
@@ -86,7 +87,7 @@ Output:
 2) Paste `models.fgd` and `sprites.fgd` into `games/Halflife`
 
 3) Incude new fgds with your other fgds (create a combined FGD, e.g: combined.fgd) with following text:
-```
+```C
 @include "zhlt.fgd"
 @include "HalfLife.fgd"
 @include "models.fgd"
@@ -94,7 +95,7 @@ Output:
 ```
 
 4) Open `GameConfig.cfg`, goto `entities` and replace ` "definitions": [ "HalfLife.fgd" ]` by ` "definitions": [ "combined.fgd" ]`. Make sure you have `"setDefaultProperties": true`:
-```
+```JSON
     "entities": {
         "definitions": [ "combine.fgd" ],
         "defaultcolor": "0.6 0.6 0.6 1.0",
