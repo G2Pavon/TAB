@@ -105,6 +105,31 @@ Now you have all models and sprites from your game folder into Entity Browser (R
 
 ---
 
+# Update FGD
+This is a method to update the fgd when new models or sprites are added to your `models/` folder. There are probably other methods to do it, but I found this method easy, fast and useful:
+
+> First, if you use linux probably you need change the permissions of the destination directory
+
+```bash
+sudo chmod a+w <prefix>/share/trenchbroom/games/your_game
+```
+> where \<prefix\> is the installation prefix
+
+
+
+- Add a new compile profile and config like this:
+
+![image](https://github.com/G2Pavon/TAB/assets/14117486/dbfbeab6-0952-4fa0-93cc-3692c55cfb81)
+
+
+- Now when you add new models or sprites, only you need is goto  `Run` -> `Compile map` -> select profile -> `Compile` -> `Close` -> (Reload Entity Definitions) press `F6`
+
+
+
+
+
+
+---
 # cycler_sprite and env_sprite converter (for Counter-Strike): 
  Install [goldsrcmap](https://github.com/G2Pavon/goldsrcmap)
 
