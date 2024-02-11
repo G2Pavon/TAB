@@ -45,13 +45,12 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 
 # How to use
 
-Download the current repo and goldsrcmap repo (https://github.com/G2Pavon/goldsrcmap)
+Download the current repo and install [goldsrcmap](https://github.com/G2Pavon/goldsrcmap)
+```shell
+pip install goldsrcmap```
+
 Extract the files in your working directory:
 ```C
-Mapping/tools/TAB/utils
-Mapping/tools/TAB/format
-Mapping/tools/TAB/__init__.py
-Mapping/tools/TAB/goldsrcmap.py
 Mapping/tools/TAB/fgd_generator.py
 Mapping/tools/TAB/entity_converter.py
 Mapping/tools/TAB/base.py
