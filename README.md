@@ -46,8 +46,10 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 # How to use
 
 Download the current repo and install [goldsrcmap](https://github.com/G2Pavon/goldsrcmap)
+
 ```shell
-pip install goldsrcmap```
+pip install goldsrcmap
+```
 
 Extract the files in your working directory:
 ```C
