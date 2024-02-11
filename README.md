@@ -119,7 +119,8 @@ sudo chmod a+w <prefix>/share/trenchbroom/games/your_game
 
 - Add a new compile profile and config like this:
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/dbfbeab6-0952-4fa0-93cc-3692c55cfb81)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/bdbb0917-5ea2-471d-a9cd-a234b5345dcf)
+
 
 
 - Now when you add new models or sprites, only you need is goto  `Run` -> `Compile map` -> select profile -> `Compile` -> `Close` -> (Reload Entity Definitions) press `F6`
