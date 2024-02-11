@@ -45,12 +45,6 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 
 # How to use
 
-Download the current repo and install [goldsrcmap](https://github.com/G2Pavon/goldsrcmap)
-
-```shell
-pip install goldsrcmap
-```
-
 Extract the files in your working directory:
 ```C
 Mapping/tools/TAB/fgd_generator.py
@@ -111,7 +105,12 @@ Now you have all models and sprites from your game folder into Entity Browser (R
 
 ---
 
-# cycler_sprite conversion (for Counter-Strike): 
+# cycler_sprite and env_sprite converter (for Counter-Strike): 
+ Install [goldsrcmap](https://github.com/G2Pavon/goldsrcmap)
+
+```shell
+pip install goldsrcmap
+```
 
 1) Goto `Run->Compile Map...`
 
