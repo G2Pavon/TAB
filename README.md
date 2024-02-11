@@ -106,7 +106,7 @@ Now you have all models and sprites from your game folder into Entity Browser (R
 ---
 
 # Update FGD
-This is a method to easy-fast update the fgd when new models or sprites are added to your `models/` folder.
+This is a method to easy-fast update the fgd when new models or sprites are added to your `models/`  `sprites/` folder.
 
 > First, if you use linux probably you need change the permissions of the destination directory
 
