@@ -1,1 +1,2 @@
 https://github.com/G2Pavon/goldsrcmap
+pip install goldsrcmap
