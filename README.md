@@ -10,7 +10,7 @@ Avoid creating cycler_sprite and env_sprites entities and manually setting the m
 ---
 # How works:
 
-`fgd_generator.py` reads the game path (e.g: `/home/user/steam/steamapps/common/Half-Life/cstrike/` ). Then `models.fgd` and `sprites.fgd` are generated.
+`fgd_generator.py` reads the game path (e.g: `/Half-Life/cstrike/` ). Then `models.fgd` and `sprites.fgd` are generated.
 
 ```C
 // ... Base class: Targetname, Angles, FrameRate, RenderFields, ConvertToCycler ...
@@ -64,7 +64,7 @@ cd Mapping/tools/TAB
 
 2) Run `fgd_generator.py <path to game folder>`:
 ```Shell
-python3 fgd_generator.py /home/user/steam/steamapps/common/Half-Life/cstrike
+python3 fgd_generator.py /Half-Life/cstrike
 ```
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/13953d8b-3581-49b4-8b00-97c146dc931f)
 
