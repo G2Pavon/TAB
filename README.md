@@ -57,14 +57,9 @@ Now follow the next steps:
 
 1) Open terminal/cmd in `Mapping/tools/TAB`
 
-Example in linux:
+2) Run `fgd_generator.py`:
 ```Shell
-cd Mapping/tools/TAB
-```
-
-2) Run `fgd_generator.py <path to game folder>`:
-```Shell
-python fgd_generator.py /Half-Life/cstrike
+python fgd_generator.py path/to/Half-Life/cstrike
 ```
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/13953d8b-3581-49b4-8b00-97c146dc931f)
 
