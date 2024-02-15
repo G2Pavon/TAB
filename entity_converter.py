@@ -11,9 +11,9 @@ def main(map_file):
     env_list = []
     kv_pairs = {}
     for entity in m.entities:
-        if 'to_cycler' in entity and entity['to_cycler'] == '1':
+        if 'convert_prop' in entity and entity['convert_prop'] == '1':
             for key, value in entity.properties.items():
-                if key not in ['classname', 'origin', 'to_cycler']:
+                if key not in ['classname', 'origin', 'convert_prop']:
                     kv_pairs[key] = value
                 elif key == 'origin':
                     x, y, z = map(float, str(value).split())
@@ -22,9 +22,9 @@ def main(map_file):
             cycler_list.append(cycler_sprite)
             kv_pairs = {}
             entity.properties = {}
-        elif 'to_env_sprite' in entity and entity['to_env_sprite'] == '1':
+        elif 'convert_sprite' in entity and entity['convert_sprite'] == '1':
             for key, value in entity.properties.items():
-                if key not in ['classname', 'origin', 'to_env_sprite']:
+                if key not in ['classname', 'origin', 'convert_sprite']:
                     kv_pairs[key] = value
                 elif key == 'origin':
                     x, y, z = map(float, str(value).split())
