@@ -56,9 +56,9 @@ BASE_CLASSES_MODELS = """
     rendercolor(color255) : "FX Color (R G B)" : "0 0 0"
 ]
 
-@BaseClass = ConvertToCycler
+@BaseClass = ConvertProp
 [   
-    to_cycler(choices) : "Convert to cycler_sprite": 1 =
+    convert_prop(choices) : "" : 1 =
     [   
         0: "no"
         1: "yes"
@@ -132,9 +132,9 @@ BASE_CLASSES_SPRITES = """
     ]
 ]
 
-@BaseClass = ConvertToEnvSprite
+@BaseClass = ConvertSprite
 [
-    to_env_sprite(choices) : "Convert to env_sprite": 1 =
+    convert_sprite(choices) : "": 1 =
     [   
         0: "no"
         1: "yes"
