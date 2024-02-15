@@ -64,7 +64,7 @@ cd Mapping/tools/TAB
 
 2) Run `fgd_generator.py <path to game folder>`:
 ```Shell
-python3 fgd_generator.py /Half-Life/cstrike
+python fgd_generator.py /Half-Life/cstrike
 ```
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/13953d8b-3581-49b4-8b00-97c146dc931f)
 
@@ -102,6 +102,8 @@ Output:
 Now you have all models and sprites from your game folder into Entity Browser (Recommendation: press ![image](https://github.com/G2Pavon/TAB/assets/14117486/97cee766-828f-4b05-aa0d-384c745df196) to group entities by name) 
 
 ![image](https://github.com/G2Pavon/TAB/assets/14117486/d6392241-0b84-4421-878b-c82ceb55d39c)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/6b50c9a4-40c4-4ffb-bfc4-d5fa24f9e37c)
+
 
 ---
 
@@ -119,7 +121,7 @@ sudo chmod a+w <prefix>/share/trenchbroom/games/your_game
 
 - Add a new compile profile and config like this:
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/bdbb0917-5ea2-471d-a9cd-a234b5345dcf)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/55d19edf-0a29-4686-8c52-f0f282b5d0ef)
 
 
 
@@ -142,17 +144,15 @@ pip install goldsrcmap
 
 2) Select your profile
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/0ec37f66-6c5a-4068-b79e-2e8bf597159c)
 
-
-3) Add new `Run Tool` Task after `Export Map` task and before `hlcsg` task
-![image](https://github.com/G2Pavon/TAB/assets/14117486/8af59b0f-db21-4a21-95dc-ca7864d0b4cf)
+3) Add new `Run Tool` task after `Export Map` and before `hlcsg`
 
 
 4) Config the new task:
     >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
-   - Tool Path: `python3`
+   - Tool Path: `python`
    - Parameters: `path/to/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
 
-![image](https://github.com/G2Pavon/TAB/assets/14117486/2616cc5d-058b-482e-a0df-645b45c0c2bf)
+![image](https://github.com/G2Pavon/TAB/assets/14117486/282b6ff9-610e-4615-9ff3-d7a7440cba7f)
+
