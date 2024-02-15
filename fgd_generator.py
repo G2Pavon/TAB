@@ -36,7 +36,7 @@ def should_exclude(file_path, exclude_prefix, exclude_word, exclude_exact_word) 
 
 def find_directory(game_path, subdir) -> str:
     """Finds the specified subdirectory within the game path"""
-    directory_path = os.path.join(game_path, subdir)
+    directory_path = os.path.join(game_path, subdir.replace('\\', '/'))
     if os.path.exists(directory_path):
         return directory_path
     else:
@@ -49,7 +49,7 @@ def find_files(directory, file_extension, exclude_folders, exclude_prefix, exclu
         dirs[:] = [d for d in dirs if d not in exclude_folders]
         for file in filenames:
             if file.lower().endswith(file_extension):  # Check if file has desired extension
-                file_path = os.path.join(root, file)
+                file_path = os.path.join(root, file).replace('\\', '/')
                 if not should_exclude(file_path, exclude_prefix, exclude_word, exclude_exact_word):
                     files.append(file_path)
     return files
@@ -67,7 +67,7 @@ def generate_and_write_fgd(files, extension, output_file_path, base_classes, ent
 
         if subfolder == '.':
             subfolder = ''
-        entity_path = os.path.join(subfolder, f"{entity_name}.{file_extension}")
+        entity_path = os.path.join(subfolder, f"{entity_name}.{file_extension}").replace('\\', '/')
 
         if entity_name in entity_count:
             entity_count[entity_name] += 1
