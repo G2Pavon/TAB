@@ -9,8 +9,8 @@ FGD_SPRITES_NAME = "sprites.fgd" # Customizable
 ENTITY_PREFIX_MODELS = "prop" # Customizable
 ENTITY_PREFIX_SPRITES = "spr" # Customizable
 
-BASE_MODELS = "Targetname, Angles, FrameRate, RenderFields, ConvertToCycler"
-BASE_SPRITES = "Targetname, Angles, FrameRate, RenderFields, ToggleSprite, ConvertToEnvSprite"
+BASE_MODELS = "Targetname, Angles, FrameRate, RenderFields, ConvertProp"
+BASE_SPRITES = "Targetname, Angles, FrameRate, RenderFields, ToggleSprite, ConvertSprite"
 
 ENTITY_POINT_SIZE = "-8 -8 -8, 8 8 8" # Customizable
 ENTITY_POINT_COLOR = "204 0 255" # Customizable
