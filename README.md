@@ -144,7 +144,7 @@ pip install goldsrcmap
 
 
 4) Config the new task:
-    >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}
+    >WARNING!!! This will overwrite the .map file you are editing in trenchbroom if the file is located in ${WORK_DIR_PATH}. RECOMMENDATION: add a new export map task ${MAP_BASE_NAME}_backup.map before
    - Tool Path: `python`
    - Parameters: `path/to/entity_converter.py ${WORK_DIR_PATH}/${MAP_BASE_NAME}.map`
 
